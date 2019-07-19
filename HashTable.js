@@ -19,17 +19,15 @@ class HashTable {
 
     get(key){
 
-        let address = this.hashKey(key);
+        let index = this.hashKey(key);
 
-        return this.table[address];
+        return this.table[index];
 
     }
 
     set(key, value){
-        console.log(key);
-        let address = this.hashKey(key);
-        console.log(address);
-        this.table[address]=value;
+        let index = this.hashKey(key);
+        this.table[index]=value;
 
     }
 
@@ -42,10 +40,10 @@ class HashTable {
     }
 
     remove(key){
-        let address = this.hashKey(key);
+        let index = this.hashKey(key);
 
-        if (this.table[address]) {
-            delete this.table[address];
+        if (this.table[index]) {
+            delete this.table[index];
         }
 
     }
